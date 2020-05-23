@@ -1,0 +1,10 @@
+---
+applications:
+- name: tesseract-v5
+  random-route: true
+  path: .
+  memory: 128M
+  command: python -m http.server -b ${VCAP_APP_HOST:-0.0.0.0} ${PORT:-8080}
+  buildpacks:
+      - https://github.com/cloudfoundry/apt-buildpack
+      - https://github.com/cloudfoundry/python-buildpack 
