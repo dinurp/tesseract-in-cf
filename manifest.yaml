@@ -1,6 +1,6 @@
 ---
 applications:
-- name: tesseract-v5
+- name: tesseract-v4
   random-route: true
   path: .
   memory: 128M
