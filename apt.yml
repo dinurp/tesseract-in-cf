@@ -1,4 +1,8 @@
 ---
 cleancache: true
+keys:
+- https://keyserver.ubuntu.com/pks/lookup?op=hget&search=f62da1192e5f8be6fed611fb367b3e8a
+repos:
+- deb http://ppa.launchpad.net/alex-p/tesseract-ocr/ubuntu bionic main 
 packages:
-- tesseract-ocr
+- tesseract-ocr=4.1.1-2ppa1~bionic1
