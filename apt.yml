@@ -2,3 +2,4 @@
 cleancache: true
 packages:
 - tesseract-ocr
+- tesseract-ocr-eng
