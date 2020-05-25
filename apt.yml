@@ -2,4 +2,4 @@
 cleancache: true
 packages:
 - tesseract-ocr
-- tesseract-ocr-eng
+- https://github.com/dinurp/tesseract-in-cf/releases/download/v0.01-staging/tesseract-ocr-mrz.deb
