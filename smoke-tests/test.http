@@ -1,0 +1,24 @@
+### Health check
+{{baseurl}}
+
+
+### OCR
+{{baseurl}}/ocr?image=sample/fox.png
+
+### OCR
+{{baseurl}}/ocr?lang=mrz%2Beng&image=sample/sample-mrz.jpg
+
+### OCR
+{{baseurl}}/ocr?lang=mrz&image=sample/sample-mrz.jpg
+
+### OCR
+POST {{baseurl}}/ocr HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="fox.png"
+Content-Type: image/png
+
+< sample/fox.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
