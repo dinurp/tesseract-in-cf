@@ -4,9 +4,11 @@ applications:
   random-route: true
   path: .
   memory: 128M
-  command: python server.py
+  # command: uwsgi --http ${VCAP_APP_HOST:-0.0.0.0}:${VCAP_APP_PORT:-8080} --master --workers 2 --manage-script-name --mount /=server:app
+  command: uwsgi --http :$VCAP_APP_PORT --mount /=server:app
   env:
     TESSDATA_PREFIX: ../deps/0/apt/usr/share/tesseract-ocr/4.00/tessdata
+    # FLASK_ENV: development
   buildpacks:
       - https://github.com/cloudfoundry/apt-buildpack
       - https://github.com/cloudfoundry/python-buildpack 
