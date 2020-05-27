@@ -1,5 +1,9 @@
 ---
 cleancache: true
+keys:
+- https://keyserver.ubuntu.com/pks/lookup?op=hget&search=f62da1192e5f8be6fed611fb367b3e8a
+repos:
+ - deb http://ppa.launchpad.net/alex-p/tesseract-ocr-devel/ubuntu bionic main 
 packages:
 - tesseract-ocr
-- https://github.com/dinurp/tesseract-in-cf/releases/download/v0.01-staging/tesseract-ocr-mrz.deb
+- https://github.com/dinurp/tesseract-in-cf/releases/download/v0.01-v5-staging/tesseract-ocr-mrz.deb

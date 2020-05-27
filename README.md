@@ -9,11 +9,11 @@ mkdir -p tesseract-ocr-mrz/DEBIAN
 cat - > tesseract-ocr-mrz/DEBIAN/control <<EOF
 Package: tesseract-ocr-mrz
 Source: tesseract-lang
-Version: 4.00~git-0f039b
+Version: 5.00~git-0f039b
 Architecture: all
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-Recommends: tesseract-ocr (>= 3.99)
-Breaks: tesseract-ocr (<< 3.99)
+Recommends: tesseract-ocr (>= 4.99)
+Breaks: tesseract-ocr (<< 4.99)
 Replaces: tesseract-ocr-data (<< 2)
 Provides: tesseract-ocr-lang, tesseract-ocr-language
 Section: graphics
@@ -26,8 +26,8 @@ Description: tesseract-ocr language files for Machine Readable Zone (MRZ)
  needed for processing images of MRZ in ID documents..
 EOF
 
-mkdir -p tesseract-ocr-mrz/usr/share/tesseract-ocr/4.00/tessdata
-wget  -O tesseract-ocr-mrz/usr/share/tesseract-ocr/4.00/tessdata/mrz.traineddata \
+mkdir -p tesseract-ocr-mrz/usr/share/tesseract-ocr/5/tessdata
+wget  -O tesseract-ocr-mrz/usr/share/tesseract-ocr/5/tessdata/mrz.traineddata \
          https://github.com/DoubangoTelecom/tesseractMRZ/raw/master/tessdata_best/mrz.traineddata
 
 find tesseract-ocr-mrz -type d | xargs chmod 755
