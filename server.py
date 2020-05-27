@@ -6,9 +6,22 @@ from time  import time
 
 import pytesseract
 
-import logging 
-logger = logging.getLogger('tesseract-in-cf')
 app = Flask(__name__)
+
+import logging 
+
+if 'true' == os.environ.get('CF_APPLOG_ENABLED','false').lower() :
+    from sap.cf_logging import flask_logging
+    flask_logging.init(app, logging.INFO)
+else:
+    import logging.config
+    import yaml
+
+    with open('logger-config.yaml', 'r') as f:
+        config = yaml.safe_load(f.read())
+        logging.config.dictConfig(config)
+
+logger = logging.getLogger('tesseract-in-cf')
 
 #health check
 @app.route('/')
@@ -58,13 +71,6 @@ def ocr_files(folder=None):
 
 
 if __name__ == '__main__':
-    import logging.config
-    import yaml
-
-    with open('logger-config.yaml', 'r') as f:
-        config = yaml.safe_load(f.read())
-        logging.config.dictConfig(config)
-
-    port = int(os.environ.get('PORT', 3000))
+    port = int(os.environ.get('VCAP_APP_PORT', 3000))
     host = os.environ.get('VCAP_APP_HOST', '0.0.0.0')
     app.run(host=host, port=port)

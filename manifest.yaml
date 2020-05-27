@@ -8,6 +8,7 @@ applications:
   env:
     TESSDATA_PREFIX: ../deps/0/apt/usr/share/tesseract-ocr/4.00/tessdata
     FLASK_ENV: development
+    CF_APPLOG_ENABLED: true
   buildpacks:
       - https://github.com/cloudfoundry/apt-buildpack
       - https://github.com/cloudfoundry/python-buildpack 
